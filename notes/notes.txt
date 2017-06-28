@@ -1,0 +1,4 @@
+1) SNS
+2) SES
+3) DynamoDB
+4) S3
