@@ -49,6 +49,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
+            'avatar' => 'required|image',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -62,10 +63,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        // If avatar gets strored locally:
+        //$avatar_path = str_replace('public/', '', request()->file('avatar')->store('public/avatars'));
+
+        if($avatar_path = config('filesystems.disks.s3.s3_url') . request()->file('avatar')->store('avatars')) {
+            return User::create([
+                'name' => $data['name'],
+                'avatar' => $avatar_path,
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+            ]);
+        }
     }
 }

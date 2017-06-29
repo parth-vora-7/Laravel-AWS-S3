@@ -59,8 +59,9 @@ return [
             'driver' => 's3',
             'key' => env('AWS_KEY'),
             'secret' => env('AWS_SECRET'),
-            'region' => env('AWS_REGION'),
-            'bucket' => env('AWS_BUCKET'),
+            'region' => env('AWS_REGION', 'ap-south-1'),
+            'bucket' => env('AWS_BUCKET', 'lara-aws'),
+            's3_url' => env('S3_URL', 'https://s3.ap-south-1.amazonaws.com/lara-aws/')
         ],
 
     ],
