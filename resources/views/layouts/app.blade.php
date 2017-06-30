@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -76,6 +77,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/dropzone.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
