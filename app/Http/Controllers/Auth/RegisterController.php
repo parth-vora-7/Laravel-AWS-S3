@@ -66,7 +66,7 @@ class RegisterController extends Controller
         // If avatar gets strored locally:
         //$avatar_path = str_replace('public/', '', request()->file('avatar')->store('public/avatars'));
 
-        if($avatar_path = config('filesystems.disks.s3.s3_url') . request()->file('avatar')->store('avatars')) {
+        if($avatar_path = config('filesystems.disks.s3.cloudfront_url') . request()->file('avatar')->store('avatars')) {
             return User::create([
                 'name' => $data['name'],
                 'avatar' => $avatar_path,

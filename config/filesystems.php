@@ -61,7 +61,8 @@ return [
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION', 'ap-south-1'),
             'bucket' => env('AWS_BUCKET', 'lara-aws'),
-            's3_url' => env('S3_URL', 'https://s3.ap-south-1.amazonaws.com/lara-aws/')
+            's3_url' => env('S3_URL', 'https://s3.ap-south-1.amazonaws.com/lara-aws/'),
+            'cloudfront_url' => env('CLOUDFRONT_URL', 'http://d1m6hn8f9dmc84.cloudfront.net/'),
         ],
 
     ],

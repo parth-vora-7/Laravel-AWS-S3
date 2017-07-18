@@ -1,5 +1,5 @@
-1) SNS: Send SMS using SQS
-2) SES: Send emails using SES
-3) SQS: Integrate queue
-4) DynamoDB: Use as database
-5) S3: For file storing
+1) SNS: Send SMS using SQS *
+2) SES: Send emails using SES *
+3) SQS: Integrate queue *
+4) DynamoDB: Use as database *
+5) S3: For file storing  ***
